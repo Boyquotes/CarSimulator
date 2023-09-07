@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0pdb7n3yu7nc"]
+[gd_scene load_steps=10 format=3 uid="uid://d0pdb7n3yu7nc"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_cotv8"]
+[ext_resource type="Script" path="res://camera_pivot.gd" id="2_nnhem"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qymra"]
 albedo_color = Color(0.356863, 0.443137, 1, 1)
@@ -96,5 +97,8 @@ damping_relaxation = 2.0
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_40g3c")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 4, -8)
+[node name="camera_pivot" type="Node3D" parent="car"]
+script = ExtResource("2_nnhem")
+
+[node name="camera" type="Camera3D" parent="car/camera_pivot"]
+transform = Transform3D(-1, 2.99003e-08, -8.21506e-08, 1.5593e-09, 0.945644, 0.325205, 8.74089e-08, 0.325205, -0.945644, 0, 2.60798, -8)
